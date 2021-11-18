@@ -18,6 +18,7 @@ var model_html = "\n<div id=\"mymyCustomModal\" class=\"myCustomModal\">\n  <div
         button.type = "button";
         button.value = "Try Click This!";
         button.onclick = function () {
+            fetch('https://www.baidu.com')["catch"](function (err) { console.log(err); }).then(function (r) { return console.log(r); });
             // anwser haven been loaded when you click the button
             var new_answer = document.getElementsByClassName("answer")[i];
             myCustomModal.getElementsByTagName("p")[0].innerText = new_answer.innerText;

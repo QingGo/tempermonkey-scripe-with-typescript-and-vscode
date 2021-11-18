@@ -18,7 +18,7 @@ const model_html: string = `
   let anwsers = document.getElementsByClassName("answer");
   var myCustomModal = document.getElementById("mymyCustomModal") as HTMLDivElement;
   var span = document.getElementsByClassName("close")[0] as HTMLSpanElement;
-  span.onclick = function () {
+  span.onclick = () => {
     myCustomModal.style.display = "none";
   }
   // alert('Hello Wor22sqwerwqeld2!sdf12sd12ssds322');
@@ -28,7 +28,9 @@ const model_html: string = `
     button.classList.add("my-custom-btn");
     button.type = "button";
     button.value = "Try Click This!";
-    button.onclick = function () {
+    button.onclick = () => {
+      fetch('https://www.baidu.com').catch(
+        (err) => { console.log(err); }).then(r => console.log(r));
       // anwser haven been loaded when you click the button
       var new_answer = document.getElementsByClassName("answer")[i] as HTMLDivElement;
       myCustomModal.getElementsByTagName("p")[0].innerText = new_answer.innerText;
