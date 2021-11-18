@@ -14,7 +14,7 @@ Thank to https://stackoverflow.com/questions/41212558/develop-tampermonkey-scrip
 // @author       You
 // @match        https://localhost:3000/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @grant        none
+// @grant        GM_addStyle
 // @require      file:///Users/zengyingqing/code/ts_stuff/test_ts/test.js
 // ==/UserScript==
 ```
