@@ -29,7 +29,22 @@ const model_html: string = `
     button.type = "button";
     button.value = "Try Click This!";
     button.onclick = () => {
-      fetch('https://www.baidu.com').catch(
+      let cookies = document.cookie
+      console.log("cookies: " + cookies);
+      fetch('https://mytestserver:8080/change_name', {
+        method: 'POST',
+        // Note that mode: "no-cors" only allows a limited set of headers in the request:
+        // Accept
+        // Accept-Language
+        // Content-Language
+        // Content-Type with a value of application/x-www-form-urlencoded, multipart/form-data, or text/plain
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ "name": "typescript", 'Cookie': cookies }),
+        credentials: "include"
+      }).catch(
         (err) => { console.log(err); }).then(r => console.log(r));
       // anwser haven been loaded when you click the button
       var new_answer = document.getElementsByClassName("answer")[i] as HTMLDivElement;
